@@ -1,2 +1,0 @@
-# Novinophobia
-Final wine project
