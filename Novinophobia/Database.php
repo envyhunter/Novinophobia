@@ -1,5 +1,5 @@
 <?php
-//
+// Emily added an arbitrary note to test using gitHub 
 //
 //
 class DatabaseAdaptor {
