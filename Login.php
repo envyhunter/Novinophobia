@@ -11,10 +11,10 @@
 		<div id="login_Form">
 			<form action="Login_Request.php" method="post">
 				<p>username</p> <input type="text" name="username" />
-				<p>password</p> <input type="text" name="passwd" />
+				<p>password</p> <input type="password" name="passwd" />
 				<input type="submit" value="Login" />
-				<a href="Register.php">Sign Up</a>
 			</form>
+			<a href="Register.php">Sign Up</a>
 
 		</div>
 
