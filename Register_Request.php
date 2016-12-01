@@ -7,7 +7,7 @@ if (isset ( $_POST ["username"] ) && isset ( $_POST ["passwd"] ) && isset ( $_PO
 	$lastName = $_POST ["LastName"];
 	
 	$username = mysql_real_escape_string ( $user );
-	$hashed_pwd = password_hash ( $pwd, PASSWORD_BCRYPT );
+	$hashed_pwd = password_hash ( $pwd, PASSWORD_DEFAULT);
 	
 	$firstName = mysql_real_escape_string ( $firstName );
 	$lastName = mysql_real_escape_string ( $lastName );

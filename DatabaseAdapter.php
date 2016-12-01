@@ -20,13 +20,26 @@ class DatabaseAdaptor {
 	}
 	// Return all quotations records as an associative array.
 	public function loginUser($username) {
-		$stmt = $this->DB->prepare ( "SELECT password FROM user WHERE username=:user" );
+		$stmt = $this->DB->prepare ( "SELECT password FROM user WHERE username = :user" );
 		$stmt->bindParam ( 'user', $username );
 		$stmt->execute ();
 		return $stmt->fetchAll ( PDO::FETCH_ASSOC );
 	}
 	
+	public function echoMatch($name) {
+		# Set up database query
+		# TODO
+		$query = "SELECT username FROM user WHERE username=:name";
+		$statement = $this->DB->prepare($query);
+		# TODO
+		$statement->bindParam('name', $name);
+		$statement->execute();
 	
+		# Add success status attribte, and send the whole row back.
+		$row = $statement->fetch(PDO::FETCH_ASSOC);
+		$row['status'] = 'success';
+		echo json_encode($row);
+	}
 	
 	public function addUser($username, $hashed_pwd, $firstName, $lastName) {
 		$stmt = $this->DB->prepare ( "INSERT INTO user (id, username, password, firstName, lastName, registered)  values(null, :user, :hash, :firstname, :lastname, now())" );		

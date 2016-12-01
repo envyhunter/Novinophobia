@@ -1,0 +1,9 @@
+#login {
+	background: url(images/winebottle.png) no-repeat;
+	background-attachment: fixed;
+	background-position: 50% 50%;
+}
+
+#login_Form {
+	float: center;
+}
