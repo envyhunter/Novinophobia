@@ -16,7 +16,11 @@
 		exit();
 	}
 	
+	// selecting a user using their id in order to get preferences
+	// created a random record with userId 20 with various integer values for testing purposes
 	$preference_info = $db->query("SELECT * FROM userpreference WHERE userId=20.");
+	
+	//pulling preferences from given row
 	foreach ($preference_info as $user){
 		$intensity = $user["intensity"];
 		$spicy = $user["spicy"];
@@ -32,18 +36,19 @@
 	}
 	
 	$arr = array(
-		"intensity" => $intensity,
-		"spicy" => $spicy,
-		"chocolate" => $chocolate,
-		"acidity" => $acidity,
-		"light_bodied" => $light_bodied,
-		"medium_bodied" => $medium_bodied,
-		"full_bodied" => $full_bodied,
-		"dry" => $dry,
-		"sweet" => $sweet,
-		"elegant" => $elegant,
-		"earthy" => $earthy
+		"Intensity" => $intensity,
+		"Spicy" => $spicy,
+		"Chocolate" => $chocolate,
+		"Acidic" => $acidity,
+		"Light Bodied" => $light_bodied,
+		"Medium Bodied" => $medium_bodied,
+		"Full Bodied" => $full_bodied,
+		"Dry" => $dry,
+		"Sweet" => $sweet,
+		"Elegant" => $elegant,
+		"Earthy" => $earthy
 	);
+	//sorts without losing index values
 	asort($arr);
 	
 ?>
@@ -56,9 +61,10 @@
 	<h1 id="header">Profile Page</h1>
 	
 	<div class>
-		<p>Based on your user input, you seem to like your wines to be/have:</p>
+		<p>Based on your user input, you seem to like your wines to be:</p>
 		<ul>
 			<?php
+				//list keys instead of integer values for user
 				$keys = array_keys($arr);
 				foreach($keys as $index){
 					?><li><?=$index?></li><?php
@@ -66,13 +72,5 @@
 			?>
 		</ul>
 	</div>
-	<?php
-		/*while ($fruit_name = current($array)) {
-		if ($fruit_name == 'apple') {
-			echo key($array).'<br />';
-		}
-		next($array);
-}*/	
-	?>
 </body>
 </html>
