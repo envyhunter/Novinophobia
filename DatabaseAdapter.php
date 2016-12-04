@@ -66,9 +66,9 @@ class DatabaseAdaptor {
 				$stmt->bindParam ( 'userID', $UserId );
 				$stmt->execute ();
 	}
-	//is this wrong somehow?
+	
 	public function addComment($userID, $newMSG) {
-		$stmt = $this->DB->prepare ( "INSERT INTO message VALUES (:userid, :newmsg)");
+		$stmt = $this->DB->prepare ( "INSERT INTO message VALUES (:userid, :newmsg, now())");
 		$stmt->bindParam('userid', $userID);
 		$stmt->bindParam('newmsg', $newMSG);
 		$stmt->execute ();
