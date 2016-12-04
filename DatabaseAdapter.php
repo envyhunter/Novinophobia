@@ -26,6 +26,13 @@ class DatabaseAdaptor {
 		return $stmt->fetchAll ( PDO::FETCH_ASSOC );
 	}
 	
+	public function getUserID($username) {
+		$stmt = $this->DB->prepare ( "SELECT id FROM user WHERE username = :user" );
+		$stmt->bindParam ( 'user', $username );
+		$stmt->execute ();
+		return $stmt->fetchAll ( PDO::FETCH_ASSOC );
+	}
+	
 	public function echoMatch($name) {
 		# Set up database query
 		# TODO
@@ -60,9 +67,10 @@ class DatabaseAdaptor {
 				$stmt->execute ();
 	}
 	//is this wrong somehow?
-	public function addComment($userid, $newmsg) {
-		$stmt = $this->DB->prepare ( "INSERT INTO message VALUES ($userid, $newmsg, NULL)");
-		$stmt->bindParam('userid', $userid);
+	public function addComment($userID, $newMSG) {
+		$stmt = $this->DB->prepare ( "INSERT INTO message VALUES (:userid, :newmsg)");
+		$stmt->bindParam('userid', $userID);
+		$stmt->bindParam('newmsg', $newMSG);
 		$stmt->execute ();
 	}
 }
