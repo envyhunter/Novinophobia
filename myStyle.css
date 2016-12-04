@@ -7,3 +7,22 @@
 #login_Form {
 	float: center;
 }
+
+/*anything necessary for the body of this page*/
+#chatroom{
+	
+}
+/*where messages will appear*/
+#chatbox{
+	height: 400px;
+	width: 550px;
+	background-color: plum;
+	overflow: scroll;
+}
+
+#im{
+	/*height: 100px;
+	width: 500px;*/
+	width:500px;
+	height:100px;
+}
