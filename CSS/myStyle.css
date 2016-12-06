@@ -1,12 +1,35 @@
 #login {
-	background: url(images/winebottle.png) no-repeat;
+	/*background: url(../images/winebottle.png) no-repeat;
 	background-attachment: fixed;
-	background-position: 50% 50%;
+	background-position: 50% 50%;*/
+	background-color: #800000;
 }
 
 #login_Form {
 	float: center;
+	width: 550px;
+	height: 200px;
+	border: solid;
+	border-color: black;
+	/*background-color: #800000;*/
+	font-family: Sans-Serif;
+	padding: 20px;
+	border-radius: 25px;
+	font-size: 14pt;
+	font-weight: bold;
 }
+
+.button{
+	border-radius: 5px;
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+.usernameBox{
+	
+}
+
+.passwordBox{}
 
 /*anything necessary for the body of this page*/
 #chatroom{
