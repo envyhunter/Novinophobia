@@ -1,5 +1,5 @@
 <?php
-require_once "DatabaseAdapter.php";
+require_once "../Database/DatabaseAdapter.php";
 if (isset ( $_POST ["username"] ) && isset ( $_POST ["passwd"] )) {
 	$user = $_POST ["username"];
 	$pwd = $_POST ["passwd"];
@@ -16,11 +16,11 @@ if (isset ( $_POST ["username"] ) && isset ( $_POST ["passwd"] )) {
 		session_start();
 		$array = $myDatabaseFunctions->getUserID($username);
 		foreach ( $array as $record ) {
-			$_SESSION["id"] = $record['password'];
+			$_SESSION["id"] = $record['id'];
 		}
-		header ( 'Location:WineSelector.php' );
+		header ( 'Location:../MainPage/WineSelector.php' );
 	} else {
-		header ( 'Location:index.php' );
+		header ( 'Location:../index.php' );
 	}
 } else {
 	echo "error";

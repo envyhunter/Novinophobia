@@ -12,18 +12,18 @@
  */
 if (isset ( $_GET ['mode'] )) {
 	if ($_GET ['mode'] === 'register') {
-		require_once ("Register.php");
+		require_once ("Login/Register.php");
 	}
 	if ($_GET ['mode'] === 'profile') {
-		require_once ("Profile.php");
+		require_once ("Profile/Profile.php");
 	}
 	if ($_GET ['mode'] === 'wineDiscription') {
-		require_once ("WineDescription.php");
+		require_once ("WineDescriptions/WineDescription.php");
 	}
 	if ($_GET ['mode'] === 'wineSelector.php') {
-		require_once ("WineSelector.php");
+		require_once ("MainPage/WineSelector.php");
 	}
 } else {
-	require_once ("Login.php");
+	require_once ("Login/Login.php");
 }
 ?>

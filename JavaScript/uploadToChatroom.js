@@ -17,12 +17,8 @@ function ajaxCompleted(ajax) {
 	var stat = "";
 	// TODO
 	// *************************************************************************************
-	if (resp.username) {
-		stat = "username taken";
-	} else {
-		stat = "username avaiable";
-	}
-	$("status").textContent = stat;
+	
+	$("im").textContent = "";
 }
 
 // Callback function if AJAX fails or results are unreadable.
@@ -36,23 +32,28 @@ function ajaxLookup(event) {
 	clear("status");
 
 	// read username
-	var iname = $("username").value;
+	console.log("clicked");
+	var userID = $('userID').value;
+	var input = $('im').value;
+	console.log($('userID').value);
+	console.log($('im').value);
 
 	// Only bother making a query if something is entered:
-	if (iname) {
+	if (userID && input) {
 		/*
 		 * Set up and launch the Ajax request using the prototype.js helper
 		 * class. The parameters field consists of stuff to POST.
 		 */
 		new Ajax.Request(
 		// TODO
-		"../Login/usernameCheck.php", {
+		"../Chatroom/uploadToChatroom.php", {
 			onSuccess : ajaxCompleted,
 			onFailure : ajaxFailed,
 			onException : ajaxFailed,
 			// TODO
 			parameters : {
-				name : iname
+				id : userID,
+				inputVar : input 
 			}
 		});
 	}
@@ -60,5 +61,6 @@ function ajaxLookup(event) {
 
 // Set up all the event handlers
 window.onload = function() {
-	$("username").onchange = ajaxLookup;
+	console.log("loaded");
+	$("submit").onclick = ajaxLookup;
 }

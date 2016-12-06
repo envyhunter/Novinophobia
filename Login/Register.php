@@ -2,7 +2,7 @@
 <html>
 <head>
 <script type="text/javascript" src="/prototype.js"></script>
-<script type="text/javascript" src="JavaScript/username_Taken.js"></script>
+<script type="text/javascript" src="../JavaScript/username_Taken.js"></script>
 </head>
 <body>
 	<div id="body">

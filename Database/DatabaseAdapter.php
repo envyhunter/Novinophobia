@@ -34,6 +34,7 @@ class DatabaseAdaptor {
 	}
 	
 	public function echoMatch($name) {
+		#checks to see if username is in the database
 		# Set up database query
 		# TODO
 		$query = "SELECT username FROM user WHERE username=:name";
@@ -45,6 +46,27 @@ class DatabaseAdaptor {
 		# Add success status attribte, and send the whole row back.
 		$row = $statement->fetch(PDO::FETCH_ASSOC);
 		$row['status'] = 'success';
+		echo json_encode($row);
+	}
+	
+	public function updateChatroom($id, $inputVar) {
+		# Set up database query
+		# TODO
+		$stmt = $this->DB->prepare ( "INSERT INTO chatroom (userId, description, registered)  values(:id, :inputVar, now())" );		
+		$stmt->bindParam ( 'id', $id );
+		$stmt->bindParam ( 'inputVar', $inputVar );
+		$stmt->execute();
+	}
+	
+	public function downloadChatroom() {
+		# Set up database query
+		# TODO
+		$query = "SELECT * FROM chatroom ORDER BY Registered LIMIT 100";
+		$statement = $this->DB->prepare($query);
+		$statement->execute();
+	
+		# Add success status attribte, and send the whole row back.
+		$row = $statement->fetchAll(PDO::FETCH_ASSOC);
 		echo json_encode($row);
 	}
 	

@@ -2,7 +2,7 @@
 
 # Before sending any other content, specify that the output will be JSON.
 header('Content-Type: application/json');
-require_once "DatabaseAdapter.php";
+require_once "../Database/DatabaseAdapter.php";
 function give_up() {
 	echo '{ "status":"failure" }';
 	exit();
