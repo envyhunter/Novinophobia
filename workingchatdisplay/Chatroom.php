@@ -7,7 +7,8 @@ session_start();
 <head>
 	<link rel="stylesheet" type="text/css" href="myStyle.css">
 	<script type="text/javascript" src="/prototype.js"></script>
-	<script type="text/javascript" src="JavaScript/chatroomAutoUpdater.js"></script>
+	<script type="text/javascript" src="chatroomAutoUpdater.js"></script>
+	<script type="text/javascript" src="addMessage.js"></script>
 </head>
 <body id="chatroom">
 	<h1>Novinophobia Chatroom</h1>

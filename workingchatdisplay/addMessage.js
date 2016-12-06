@@ -1,10 +1,10 @@
 //global variable to refresh the page with new messages once per second
 var timerID;
 
-// Success! Will show messages in Chatroom
+// Success! A message was added to the database
 function ajaxCompleted(ajax) {
 	var o = document.getElementById("im");
-	o.textContent = "";
+	o.textContent = "Message Sent";
 }
 
 // Failure - your code is broken somehow
@@ -30,6 +30,7 @@ function ajaxLookup(event) {
 		 */
 		new Ajax.Request(
 		"updateChatroom.php", {
+			method: post,
 			onSuccess : ajaxCompleted,
 			onFailure : ajaxFailed,
 			onException : ajaxFailed,
@@ -44,11 +45,13 @@ function ajaxLookup(event) {
 
 //input the IM into the database
 function loadClick() {
+	echo "loadclick is entered ";
 	ajaxLookup;
 }
 
 window.onload = function() {
 	//submitted IM
-	$("submit").onclick = loadClick();
+	echo "page loaded";
+	$("submit").onclick = loadClick;
 }
 
