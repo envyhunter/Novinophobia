@@ -1,0 +1,25 @@
+#login {
+	background: url(images/winebottle.png) no-repeat;
+	background-attachment: fixed;
+	background-position: 50% 50%;
+}
+
+#login_Form {
+	float: center;
+}
+
+/*anything necessary for the body of this page*/
+#chatroom{
+	
+}
+/*where messages will appear*/
+#chatter{
+	height: 400px;
+	width: 550px;
+	overflow: scroll;
+}
+
+#im{
+	width:400px;
+	height:50px;
+}
