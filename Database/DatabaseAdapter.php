@@ -52,7 +52,7 @@ class DatabaseAdaptor {
 	public function updateChatroom($id, $inputVar) {
 		# Set up database query
 		# TODO
-		$stmt = $this->DB->prepare ( "INSERT INTO chatroom (userId, description, registered)  values(:id, :inputVar, now())" );		
+		$stmt = $this->DB->prepare ( "INSERT INTO chatroom (userId, description, timeStamp)  values(:id, :inputVar, now())" );		
 		$stmt->bindParam ( 'id', $id );
 		$stmt->bindParam ( 'inputVar', $inputVar );
 		$stmt->execute();
@@ -87,13 +87,6 @@ class DatabaseAdaptor {
 		$stmt = $this->DB->prepare ( "INSERT INTO userpreference (userID, intensity, spicy, chocolate, acidity, light_bodied, medium_bodied, full_bodied, dry, sweet, elegant, earthy) VALUES (:userID, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)");
 				$stmt->bindParam ( 'userID', $UserId );
 				$stmt->execute ();
-	}
-	
-	public function addComment($userID, $newMSG) {
-		$stmt = $this->DB->prepare ( "INSERT INTO message VALUES (:userid, :newmsg, now())");
-		$stmt->bindParam('userid', $userID);
-		$stmt->bindParam('newmsg', $newMSG);
-		$stmt->execute ();
 	}
 }
 ?>

@@ -3,8 +3,8 @@
 <head>
 <title>Chatroom</title>
 <script type="text/javascript" src="/prototype.js"></script>
-<script type="text/javascript" src="../JavaScript/uploadToChatroom.js"></script>
 <script type="text/javascript" src="../JavaScript/downloadFromChatroom.js"></script>
+<script type="text/javascript" src="../JavaScript/uploadToChatroom.js"></script>
 <link rel="stylesheet" type="text/css" href="../CSS/mystyle.css">
 </head>
 <body id="chatroom">

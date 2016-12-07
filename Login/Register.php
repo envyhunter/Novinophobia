@@ -3,6 +3,7 @@
 <head>
 <script type="text/javascript" src="/prototype.js"></script>
 <script type="text/javascript" src="../JavaScript/username_Taken.js"></script>
+<link rel="stylesheet" type="text/css" href="../CSS/myStyle.css">
 </head>
 <body>
 	<div id="body">
@@ -13,14 +14,15 @@
 
 			<form action="Register_Request.php" method="post">
 				<p>username</p>
-				<input type="text" name="username" id="username" /><span id="errors"></span><span id="status"></span>
+				<input type="text" name="username" id="username" /><span id="errors"></span><span
+					id="status"></span>
 				<p>password</p>
 				<input type="text" name="passwd" />
 				<p>First Name</p>
 				<input type="text" name="FirstName" />
 				<p>Last Name</p>
-				<input type="text" name="LastName" />
-				 <input type="submit" value="Register" />
+				<input type="text" name="LastName" /> <input type="submit"
+					value="Register" />
 			</form>
 
 		</div>

@@ -11,14 +11,7 @@ function clear(parentId) {
 // Callback function for successful reply.
 // (Merge AJAX response into current page.)
 function ajaxCompleted(ajax) {
-	var resp = JSON.parse(ajax.responseText);
-	console.log(ajax.responseText);
-	console.log(resp);
-	var stat = "";
-	// TODO
-	// *************************************************************************************
 	
-	$("im").textContent = "";
 }
 
 // Callback function if AJAX fails or results are unreadable.
@@ -37,6 +30,8 @@ function ajaxLookup(event) {
 	var input = $('im').value;
 	console.log($('userID').value);
 	console.log($('im').value);
+	$('im').value = "";
+	console.log($('im').value);
 
 	// Only bother making a query if something is entered:
 	if (userID && input) {
@@ -49,7 +44,7 @@ function ajaxLookup(event) {
 		"../Chatroom/uploadToChatroom.php", {
 			onSuccess : ajaxCompleted,
 			onFailure : ajaxFailed,
-			onException : ajaxFailed,
+			onException : ajaxCompleted,
 			// TODO
 			parameters : {
 				id : userID,
@@ -61,6 +56,6 @@ function ajaxLookup(event) {
 
 // Set up all the event handlers
 window.onload = function() {
-	console.log("loaded");
+	console.log("loaded upload");
 	$("submit").onclick = ajaxLookup;
 }
