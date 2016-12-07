@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="myStyle.css">
+<link rel="stylesheet" type="text/css" href="../CSS/myStyle.css">
 </head>
 <body id="login">
+	<p class="title">Chatroom Login</p>
 	<div id="body">
 		<div id="login_Form">
 			<form action="Login/Login_Request.php" method="post">
@@ -22,5 +23,6 @@
 
 
 	</div>
+	<div class="background"></div>
 </body>
 </html>
