@@ -61,7 +61,7 @@ class DatabaseAdaptor {
 	public function downloadChatroom() {
 		# Set up database query
 		# TODO
-		$query = "SELECT * FROM chatroom ORDER BY Registered LIMIT 100";
+		$query = "select c.*, u.username from chatroom c JOIN user u ON c.userId = u.id ORDER BY timeStamp asc Limit 100;";
 		$statement = $this->DB->prepare($query);
 		$statement->execute();
 	

@@ -3,8 +3,7 @@
 <head>
 <title>Chatroom</title>
 <script type="text/javascript" src="/prototype.js"></script>
-<script type="text/javascript" src="../JavaScript/downloadFromChatroom.js"></script>
-<script type="text/javascript" src="../JavaScript/uploadToChatroom.js"></script>
+<script type="text/javascript" src="../JavaScript/ChatroomMonitor.js"></script>
 <link rel="stylesheet" type="text/css" href="../CSS/mystyle.css">
 </head>
 <body id="chatroom">
@@ -17,7 +16,7 @@
 	<div id="chatbox"></div>
 	<div>
 		<input id="userID" type="hidden" value=<?=$_SESSION ["id"]?> />
-		 <input id="im"	type="textarea" size="500" value="Type something you'd like to share with the world." /> <br />
+		 <input id="im"	type="textarea" size="500" value="" /> <br />
 		<button id="submit" type="button">Click Me!</button>
 		<!--where we will report error messages-->
 		<div id="errors"></div>
