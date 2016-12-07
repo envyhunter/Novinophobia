@@ -1,35 +1,37 @@
-#login {
-	/*background: url(../images/winebottle.png) no-repeat;
-	background-attachment: fixed;
-	background-position: 50% 50%;*/
-	background-color: #800000;
+body{
+	background-color: black;
 }
 
-#login_Form {
-	float: center;
-	width: 550px;
-	height: 200px;
+#login_Form, #Register_Form {
+	float: top;
+	width: 300px;
 	border: solid;
-	border-color: black;
-	/*background-color: #800000;*/
+	border-color:  #330000;
 	font-family: Sans-Serif;
 	padding: 20px;
 	border-radius: 25px;
-	font-size: 14pt;
+	font-size: 12pt;
 	font-weight: bold;
+	background-color: #800000;
 }
 
-.button{
-	border-radius: 5px;
-	font-size: 14pt;
+.background {
+	background-image: url(../images/bg.png);
+	background-repeat: no-repeat;
+	height: 500px;
+	float: right-side;
+}
+
+
+/*refers to title on Register.php*/
+.title{
+	font-size: 18pt;
 	font-weight: bold;
+	font-family: Sans-Serif;
+	color: #800000;
+	margin-left: 30px;
 }
 
-.usernameBox{
-	
-}
-
-.passwordBox{}
 
 /*anything necessary for the body of this page*/
 #chatroom{
@@ -44,8 +46,7 @@
 }
 
 #im{
-	/*height: 100px;
-	width: 500px;*/
 	width:500px;
 	height:100px;
 }
+
